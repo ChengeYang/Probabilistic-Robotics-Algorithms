@@ -21,11 +21,11 @@ If you find anything wrong with my implementations, such as wrong understanding 
   - [4.2. EKF SLAM with Unknown Correspondence](#42-EKF-SLAM-with-Unknown-Correspondence)
 - [5. Graph SLAM](#5-Graph-SLAM)
   - [5.1. Graph SLAM with Known Correspondence](#51-Graph-SLAM-with-Known-Correspondence)
-- [6. Fast SLAM 1.0](#6-Fast-SLAM-1.0)
-  - [6.1. Fast SLAM 1.0 with Known Correspondence](#61-Fast-SLAM-1.0-with-Known-Correspondence)
-  - [6.2. Fast SLAM 1.0 with Unknown Correspondence](#62-Fast-SLAM-1-0-with-Unknown-Correspondence)
-- [7. Fasl SLAM 2.0](#7-Fast-SLAM-2-0)
-  - [7.1. Fast SLAM 2.0 with Unknown Correspondence](#71-Fast-SLAM-2.0-with-Unknown-Correspondence)
+- [6. Fast SLAM 1](#6-Fast-SLAM-1)
+  - [6.1. Fast SLAM 1 with Known Correspondence](#61-Fast-SLAM-1-with-Known-Correspondence)
+  - [6.2. Fast SLAM 1 with Unknown Correspondence](#62-Fast-SLAM-1-with-Unknown-Correspondence)
+- [7. Fast SLAM 2](#7-Fast-SLAM-2)
+  - [7.1. Fast SLAM 2 with Unknown Correspondence](#71-Fast-SLAM-2-with-Unknown-Correspondence)
 -----------------------------------------------------------------------------------------
 ## 2. Dataset
 
@@ -46,13 +46,13 @@ If you find anything wrong with my implementations, such as wrong understanding 
 
 ### 5.1. Graph SLAM with Known Correspondence
 -----------------------------------------------------------------------------------------
-## 6. Fast SLAM 1.0
+## 6. Fast SLAM 1
 
-### 6.1. Fast SLAM 1.0 with Known Correspondence
+### 6.1. Fast SLAM 1 with Known Correspondence
 
-### 6.2. Fast SLAM 1.0 with Unknown Correspondence
+### 6.2. Fast SLAM 1 with Unknown Correspondence
 -----------------------------------------------------------------------------------------
-## 7. Fasl SLAM 2.0
+## 7. Fast SLAM 2
 
-### 7.1. Fast SLAM 2.0 with Unknown Correspondence
+### 7.1. Fast SLAM 2 with Unknown Correspondence
 -----------------------------------------------------------------------------------------
