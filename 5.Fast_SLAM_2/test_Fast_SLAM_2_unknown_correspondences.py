@@ -19,13 +19,14 @@ from src.Fast_SLAM_2_unknown_correspondences import FastSLAM2
 if __name__ == '__main__':
     # Dataset info
     dataset = "../0.Dataset1"
-    start_frame = 800
+    start_frame = 400
     end_frame = 3200
 
     # Motion covariance matrix
     R = np.diagflat(np.array([0.01, 0.01, 0.01])) ** 2
     # Measurement covariance matrix
-    Q = np.diagflat(np.array([0.02, 0.04])) ** 2
+    # Q = np.diagflat(np.array([0.02, 0.04])) ** 2
+    Q = np.diagflat(np.array([0.05, 0.10])) ** 2
     # Motion noise (in meters / rad)
     # [noise_x, noise_y, noise_theta, noise_v, noise_w]
     # Fisrt three are used for initializing particles
@@ -40,7 +41,7 @@ if __name__ == '__main__':
 
     # Initialize SLAM algorithm
     # Number of particles
-    N_particles = 200
+    N_particles = 50
     fast_slam = FastSLAM2(motion_model, measurement_model)
     fast_slam.load_data(dataset, start_frame, end_frame)
     fast_slam.initialization(N_particles)
@@ -53,7 +54,7 @@ if __name__ == '__main__':
             fast_slam.landmark_update(data)
         fast_slam.state_update()
         # Plot every n frames
-        # if (len(fast_slam.states) % 15 == 0):
-        #     fast_slam.plot_data()
-    fast_slam.plot_data()
+        if (len(fast_slam.states) % 30 == 0):
+            fast_slam.plot_data()
+    # fast_slam.plot_data()
     plt.show()

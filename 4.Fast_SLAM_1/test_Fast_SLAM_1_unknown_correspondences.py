@@ -37,7 +37,7 @@ if __name__ == '__main__':
 
     # Initialize SLAM algorithm
     # Number of particles
-    N_particles = 200
+    N_particles = 100
     fast_slam = FastSLAM1(motion_model, measurement_model)
     fast_slam.load_data(dataset, start_frame, end_frame)
     fast_slam.initialization(N_particles)
@@ -50,6 +50,6 @@ if __name__ == '__main__':
             fast_slam.landmark_update(data)
         fast_slam.state_update()
         # Plot every n frames
-        if (len(fast_slam.states) % 15 == 0):
+        if (len(fast_slam.states) % 20 == 0):
             fast_slam.plot_data()
     plt.show()

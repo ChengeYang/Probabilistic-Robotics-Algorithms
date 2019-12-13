@@ -191,8 +191,8 @@ class ExtendedKalmanFilter():
             plt.text(landmark_xs[-1], landmark_ys[-1], str(index), alpha=0.5, fontsize=10)
         plt.scatter(landmark_xs, landmark_ys, s=200, c='k', alpha=0.2, marker='*', label='Landmark Locations')
 
-        # plt.title("Localization with motion model only")
-        plt.title("EKF Localization with Known Correspondences")
+        plt.title("Localization with only odometry data")
+        # plt.title("EKF Localization with Known Correspondences")
         plt.legend()
         plt.show()
 
@@ -208,7 +208,7 @@ if __name__ == "__main__":
 
     # Dataset 1
     dataset = "../0.Dataset1"
-    end_frame = 3000
+    end_frame = 3200
     # State covariance matrix
     R = np.diagflat(np.array([1.0, 1.0, 10.0])) ** 2
     # Measurement covariance matrix

@@ -221,9 +221,6 @@ class ParticleFilter():
         plt.ylim((-6.5, 6.0))
         plt.pause(1e-16)
 
-        # Plot at the end
-        # plt.show()
-
 
 if __name__ == "__main__":
     # # Dataset 0

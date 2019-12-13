@@ -14,8 +14,8 @@ import matplotlib.pyplot as plt
 
 
 class ExtendedKalmanFilterSLAM():
-    def __init__(self, dataset, end_frame, R, Q):
-        self.load_data(dataset, end_frame)
+    def __init__(self, dataset, start_frame, end_frame, R, Q):
+        self.load_data(dataset, start_frame, end_frame)
         self.initialization(R, Q)
         for data in self.data:
             if (data[1] == -1):
@@ -23,11 +23,11 @@ class ExtendedKalmanFilterSLAM():
             else:
                 self.measurement_update(data)
             # Plot every n frames
-            if (len(self.states) > 800 and len(self.states) % 10 == 0):
+            if (len(self.states) > (800 - start_frame) and len(self.states) % 10 == 0):
                 self.plot_data()
         # self.plot_data()
 
-    def load_data(self, dataset, end_frame):
+    def load_data(self, dataset, start_frame, end_frame):
         # Loading dataset
         # Barcodes: [Subject#, Barcode#]
         self.barcodes_data = np.loadtxt(dataset + "/Barcodes.dat")
@@ -46,21 +46,23 @@ class ExtendedKalmanFilterSLAM():
         self.data = np.concatenate((odom_data, self.measurement_data), axis=0)
         self.data = self.data[np.argsort(self.data[:, 0])]
 
-        # Remove all data before the fisrt timestamp of groundtruth
-        # Use first groundtruth data as the initial location of the robot
-        for i in range(len(self.data)):
-            if (self.data[i][0] > self.groundtruth_data[0][0]):
-                break
-        self.data = self.data[i:]
-
-        # Remove all data after the specified number of frames
-        self.data = self.data[:end_frame]
-        cut_timestamp = self.data[end_frame - 1][0]
-        # Remove all groundtruth after the corresponding timestamp
+        # Select data according to start_frame and end_frame
+        # Fisrt frame must be control input
+        while self.data[start_frame][1] != -1:
+            start_frame += 1
+        # Remove all data before start_frame and after the end_timestamp
+        self.data = self.data[start_frame:end_frame]
+        start_timestamp = self.data[0][0]
+        end_timestamp = self.data[-1][0]
+        # Remove all groundtruth outside the range
         for i in range(len(self.groundtruth_data)):
-            if (self.groundtruth_data[i][0] >= cut_timestamp):
+            if (self.groundtruth_data[i][0] >= end_timestamp):
                 break
         self.groundtruth_data = self.groundtruth_data[:i]
+        for i in range(len(self.groundtruth_data)):
+            if (self.groundtruth_data[i][0] >= start_timestamp):
+                break
+        self.groundtruth_data = self.groundtruth_data[i:]
 
         # Combine barcode Subject# with landmark Subject#
         # Lookup table to map barcode Subjec# to landmark coordinates
@@ -262,17 +264,17 @@ class ExtendedKalmanFilterSLAM():
         plt.xlim((-2.0, 5.5))
         plt.ylim((-7.0, 7.0))
         plt.pause(1e-16)
-        # plt.show()
 
 
 if __name__ == "__main__":
     # Dataset 1
     dataset = "../0.Dataset1"
+    start_frame = 800
     end_frame = 3200
     # State covariance matrix
     R = np.diagflat(np.array([5.0, 5.0, 100.0])) ** 2
     # Measurement covariance matrix
     Q = np.diagflat(np.array([110.0, 110.0, 1e16])) ** 2
 
-    ekf_slam = ExtendedKalmanFilterSLAM(dataset, end_frame, R, Q)
+    ekf_slam = ExtendedKalmanFilterSLAM(dataset, start_frame, end_frame, R, Q)
     plt.show()

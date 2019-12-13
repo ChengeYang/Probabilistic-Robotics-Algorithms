@@ -162,6 +162,10 @@ class MeasurementModel():
         # Mean and covariance of proposal distribution
         difference = np.array([[measurement[2] - range_expected],
                                [measurement[3] - bearing_expected]])
+        if difference[1] > np.pi:
+            difference[1] -= 2 * np.pi
+        elif difference[1] < -np.pi:
+            difference[1] += 2 * np.pi
         cov = np.linalg.inv(H_x.T.dot(Q_inverse).dot(H_x) + self.R_inverse)
         mean = cov.dot(H_x.T).dot(Q_inverse).dot(difference) + x_t
 
@@ -169,6 +173,10 @@ class MeasurementModel():
         x = np.random.normal(mean[0], cov[0, 0])
         y = np.random.normal(mean[1], cov[1, 1])
         theta = np.random.normal(mean[2], cov[2, 2])
+        if theta > np.pi:
+            theta -= 2 * np.pi
+        elif theta < -np.pi:
+            theta += 2 * np.pi
         pose_sample = np.array([x, y, theta])
 
         return pose_sample, Q
@@ -246,6 +254,10 @@ class MeasurementModel():
         # Compute Kalman gain
         difference = np.array([[measurement[2] - range_expected],
                                [measurement[3] - bearing_expected]])
+        if difference[1] > np.pi:
+            difference[1] -= 2 * np.pi
+        elif difference[1] < -np.pi:
+            difference[1] += 2 * np.pi
         K = particle.lm_cov[landmark_idx].dot(H_m.T).dot(Q_inverse)
 
         # Compute importance factor
@@ -299,6 +311,10 @@ class MeasurementModel():
 
         difference = np.array([measurement[2] - range_expected,
                                measurement[3] - bearing_expected])
+        if difference[1] > np.pi:
+            difference[1] -= 2 * np.pi
+        elif difference[1] < -np.pi:
+            difference[1] += 2 * np.pi
 
         # likelihood of correspondence
         likelihood = np.linalg.det(2 * np.pi * Q) ** (-0.5) *\

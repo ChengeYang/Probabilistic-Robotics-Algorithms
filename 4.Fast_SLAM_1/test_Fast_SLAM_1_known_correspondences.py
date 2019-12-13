@@ -50,6 +50,6 @@ if __name__ == '__main__':
             fast_slam.landmark_update(data)
         fast_slam.state_update()
         # Plot every n frames
-        if (len(fast_slam.states) % 15 == 0):
+        if (len(fast_slam.states) % 20 == 0):
             fast_slam.plot_data()
     plt.show()
