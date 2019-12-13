@@ -11,10 +11,10 @@ If you are new to SLAM problem and is reading the book Probabilistic Robotics, t
 If you find anything wrong with my implementations, such as wrong understanding or code bugs, please leave a comment!
 
 #### Table of Contents
-- [1. Introduction](##1-Introduction)
-- [2. Dataset](##2-Dataset)
-- [3. Localization](##3-Localization)
-  - [3.1. EKF Localization](###31-EKF-Localization)
+- [1. Introduction](#1-Introduction)
+- [2. Dataset](#2-Dataset)
+- [3. Localization](#3-Localization)
+  - [3.1. EKF Localization](#3-1-EKF-Localization)
   - [3.2. Particle Filter Localization](###3.2. Particle Filter Localization)
 - [4. EKF SLAM](##4. EKF SLAM)
   - [4.1. EKF SLAM with Known Correspondence](###4.1. EKF SLAM with Known Correspondence)
@@ -26,6 +26,9 @@ If you find anything wrong with my implementations, such as wrong understanding 
   - [6.2. Fast SLAM 1.0 with Unknown Correspondence](###6.2. Fast SLAM 1.0 with Unknown Correspondence)
 - [7. Fasl SLAM 2.0](##7. Fasl SLAM 2.0)
   - [7.1. Fast SLAM 2.0 with Unknown Correspondence](###7.1. Fast SLAM 2.0 with Unknown Correspondence)
+-----------------------------------------------------------------------------------------
+## 2. Dataset
+
 -----------------------------------------------------------------------------------------
 ## 3. Localization
 
