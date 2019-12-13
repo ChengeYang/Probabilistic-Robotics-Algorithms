@@ -191,8 +191,8 @@ class ExtendedKalmanFilter():
             plt.text(landmark_xs[-1], landmark_ys[-1], str(index), alpha=0.5, fontsize=10)
         plt.scatter(landmark_xs, landmark_ys, s=200, c='k', alpha=0.2, marker='*', label='Landmark Locations')
 
-        plt.title("Localization with only odometry data")
-        # plt.title("EKF Localization with Known Correspondences")
+        # plt.title("Localization with only odometry data")
+        plt.title("EKF Localization with Known Correspondences")
         plt.legend()
         plt.show()
 

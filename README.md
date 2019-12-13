@@ -31,6 +31,7 @@ If you find anything wrong with my implementations, such as wrong understanding 
 <p align = "center">
   <img src = "doc/Odometry.png" height = "360px" style="margin:10px 10px">
 </p>
+
 -----------------------------------------------------------------------------------------
 ## 3. Localization
 
@@ -38,10 +39,12 @@ If you find anything wrong with my implementations, such as wrong understanding 
 <p align = "center">
   <img src = "doc/EKF_Localization_known_correspondences.png" height = "360px" style="margin:10px 10px">
 </p>
+
 ### 3.2. Particle Filter Localization
 <p align = "center">
   <img src = "doc/PF_Localization_known_correspondences.gif" height = "360px" style="margin:10px 10px">
 </p>
+
 -----------------------------------------------------------------------------------------
 ## 4. EKF SLAM
 
@@ -49,10 +52,12 @@ If you find anything wrong with my implementations, such as wrong understanding 
 <p align = "center">
   <img src = "doc/EKF_SLAM_known_correspondences.gif" height = "360px" style="margin:10px 10px">
 </p>
+
 ### 4.2. EKF SLAM with Unknown Correspondence
 <p align = "center">
   <img src = "doc/EKF_SLAM_unknown_correspondences.gif" height = "360px" style="margin:10px 10px">
 </p>
+
 -----------------------------------------------------------------------------------------
 ## 5. Graph SLAM
 
@@ -60,6 +65,7 @@ If you find anything wrong with my implementations, such as wrong understanding 
 <p align = "center">
   <img src = "doc/Graph_SLAM_known_correspondences.png" height = "360px" style="margin:10px 10px">
 </p>
+
 -----------------------------------------------------------------------------------------
 ## 6. Fast SLAM 1
 
@@ -67,10 +73,12 @@ If you find anything wrong with my implementations, such as wrong understanding 
 <p align = "center">
   <img src = "doc/Fast_SLAM_1_known_correspondences.gif" height = "360px" style="margin:10px 10px">
 </p>
+
 ### 6.2. Fast SLAM 1 with Unknown Correspondence
 <p align = "center">
   <img src = "doc/Fast_SLAM_1_unknown_correspondences.gif" height = "360px" style="margin:10px 10px">
 </p>
+
 -----------------------------------------------------------------------------------------
 ## 7. Fast SLAM 2
 
@@ -78,4 +86,5 @@ If you find anything wrong with my implementations, such as wrong understanding 
 <p align = "center">
   <img src = "doc/Fast_SLAM_2_unknown_correspondences.gif" height = "360px" style="margin:10px 10px">
 </p>
+
 -----------------------------------------------------------------------------------------
