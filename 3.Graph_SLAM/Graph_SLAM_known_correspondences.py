@@ -3,7 +3,7 @@
 '''
 Implementation of Graph SLAM with known correspondences.
 See Probabilistic Robotics:
-    1. Page 347, Table 11.1 - 11.5 for full algorithm.
+    1. Page 350, Table 11.1 - 11.5 for full algorithm.
 
 Author: Chenge Yang
 Email: chengeyang2019@u.northwestern.edu
