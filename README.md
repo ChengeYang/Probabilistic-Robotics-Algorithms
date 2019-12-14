@@ -2,7 +2,7 @@
 #### Chenge Yang, 2019 Winter, Northwestern University
 -----------------------------------------------------------------------------------------
 ## 1. Introduction
-This project contains Python3 implementations and results of a variety of state estimation and SLAM algorithms in Sebastian Thrun's book Probabilistic Robotics using UTIAS Multi-Robot Cooperative Localization and Mapping Dataset.
+This project contains Python3 implementations and results of a variety of state estimation and SLAM algorithms in Sebastian Thrun's book **Probabilistic Robotics** using **UTIAS Multi-Robot Cooperative Localization and Mapping** dataset.
 
 As a beginner in SLAM, I always found it difficult to understand the non-intuitive mathematical equations, and I can barely find straightforward instructions on implementing these algorithms. Therefore, I created this repo to demonstrate the basic concepts behind the book, paired with results running on a simple dataset.
 
