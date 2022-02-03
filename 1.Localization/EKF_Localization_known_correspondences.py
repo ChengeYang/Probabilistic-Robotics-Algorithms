@@ -179,7 +179,7 @@ class ExtendedKalmanFilter():
         # Measurement update locations
         if (len(self.states_measurement) > 0):
             self.states_measurement = np.array(self.states_measurement)
-            plt.scatter(self.states_measurement[:, 0], self.states_measurement[:, 1], s=10, c='k', alpha='0.5', label="Measurement updates")
+            plt.scatter(self.states_measurement[:, 0], self.states_measurement[:, 1], s=10, c='k', alpha=0.5, label="Measurement updates")
 
         # Landmark ground truth locations and indexes
         landmark_xs = []
